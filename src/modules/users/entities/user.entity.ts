@@ -1,6 +1,6 @@
-import { Column, OneToMany } from "typeorm";
-import { CommonEntity } from "src/common/entities/common.entity";
-import { Post } from "src/modules/posts/entities/post.entity";
+import { Column, OneToMany } from 'typeorm';
+import { CommonEntity } from 'src/common/entities/common.entity';
+import { Post } from 'src/modules/posts/entities/post.entity';
 
 export class User extends CommonEntity {
   @Column({ type: 'varchar', unique: true })
@@ -21,4 +21,3 @@ export class User extends CommonEntity {
   @OneToMany(() => Post, (post) => post.user, { cascade: true })
     posts: Post[];
 }
-  

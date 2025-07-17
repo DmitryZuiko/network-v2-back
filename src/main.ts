@@ -1,7 +1,7 @@
 import { NestFactory } from '@nestjs/core';
+import { ConfigService } from '@nestjs/config';
 import { AppModule } from './app.module';
 import { EnvVariables } from './common/enums/envVariables.enum';
-import { ConfigService } from '@nestjs/config';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -16,4 +16,5 @@ async function bootstrap() {
 
   console.log(`App is running on http://localhost:${port}/api`);
 }
+
 bootstrap();

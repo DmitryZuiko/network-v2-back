@@ -6,14 +6,14 @@ import { EnvVariables } from '../enums/envVariables.enum';
 @Module({
   imports: [
     TypeOrmModule.forRootAsync({
-      imports: [ConfigModule],
+      imports: [ ConfigModule ],
       useFactory: (config: ConfigService) => ({
         type: 'postgres',
         url: config.get<string>(EnvVariables.DATABASE_URL),
         autoLoadEntities: true,
         synchronize: true, // только для разработки
       }),
-      inject: [ConfigService],
+      inject: [ ConfigService ],
     }),
   ],
 })
